@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -50,12 +49,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedData(data: Data) {
-//        val intentDetail = Intent(this@MainActivity, DetailActivity::class.java)
-//        intentDetail.putExtra(DetailActivity.EXTRA_NAMA, data.namePlace.toString())
-//        intentDetail.putExtra(DetailActivity.EXTRA_LOKASI, data.lokasiPlace.toString())
-//        intentDetail.putExtra(DetailActivity.EXTRA_DETAIL, data.detailPlace.toString())
-//        intentDetail.putExtra(DetailActivity.EXTRA_NOMOR, data.callPlace.toString())
-//        intentDetail.putExtra(DetailActivity.EXTRA_FOTO, data.image)
-//        startActivity(intentDetail)
+        val intentDetail = Intent(this@MainActivity, DetailActivity::class.java)
+        intentDetail.putExtra(DetailActivity.EXTRA_NAME, data.name)
+        intentDetail.putExtra(DetailActivity.EXTRA_USERNAME, data.username)
+        intentDetail.putExtra(DetailActivity.EXTRA_COMPANY, data.company)
+        intentDetail.putExtra(DetailActivity.EXTRA_LOCATION, data.location)
+        intentDetail.putExtra(DetailActivity.EXTRA_REPOSITORY, data.repository.toString())
+        intentDetail.putExtra(DetailActivity.EXTRA_FOLLOWERS, data.followers.toString())
+        intentDetail.putExtra(DetailActivity.EXTRA_FOLLOWING, data.following.toString())
+        intentDetail.putExtra(DetailActivity.EXTRA_AVATAR, data.avatar)
+        startActivity(intentDetail)
     }
 }

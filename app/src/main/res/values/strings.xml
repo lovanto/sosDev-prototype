@@ -5,6 +5,9 @@
     <string name="followers">Followers</string>
     <string name="following">Following</string>
     <string name="nulled">NULL</string>
+    <string name="location">Location</string>
+    <string name="work">Work</string>
+    <string name="repositories">Repositories</string>
 
     <string-array name="username">
         <item>JakeWharton</item>
