@@ -49,15 +49,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedData(data: Data) {
+        val dataUser = Data (
+            data.username,
+            data.name,
+            data.avatar,
+            data.company,
+            data.location,
+            data.repository,
+            data.followers,
+            data.following
+        )
+
         val intentDetail = Intent(this@MainActivity, DetailActivity::class.java)
-        intentDetail.putExtra(DetailActivity.EXTRA_NAME, data.name)
-        intentDetail.putExtra(DetailActivity.EXTRA_USERNAME, data.username)
-        intentDetail.putExtra(DetailActivity.EXTRA_COMPANY, data.company)
-        intentDetail.putExtra(DetailActivity.EXTRA_LOCATION, data.location)
-        intentDetail.putExtra(DetailActivity.EXTRA_REPOSITORY, data.repository.toString())
-        intentDetail.putExtra(DetailActivity.EXTRA_FOLLOWERS, data.followers.toString())
-        intentDetail.putExtra(DetailActivity.EXTRA_FOLLOWING, data.following.toString())
-        intentDetail.putExtra(DetailActivity.EXTRA_AVATAR, data.avatar)
+        intentDetail.putExtra(DetailActivity.EXTRA_DATA, dataUser)
+//        intentDetail.putExtra(DetailActivity.EXTRA_NAME, data.name)
+//        intentDetail.putExtra(DetailActivity.EXTRA_USERNAME, data.username)
+//        intentDetail.putExtra(DetailActivity.EXTRA_COMPANY, data.company)
+//        intentDetail.putExtra(DetailActivity.EXTRA_LOCATION, data.location)
+//        intentDetail.putExtra(DetailActivity.EXTRA_REPOSITORY, data.repository.toString())
+//        intentDetail.putExtra(DetailActivity.EXTRA_FOLLOWERS, data.followers.toString())
+//        intentDetail.putExtra(DetailActivity.EXTRA_FOLLOWING, data.following.toString())
+//        intentDetail.putExtra(DetailActivity.EXTRA_AVATAR, data.avatar)
         startActivity(intentDetail)
     }
 }
