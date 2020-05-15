@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showRecyclerList(){
+    private fun showRecyclerList() {
         recycleView.layoutManager = LinearLayoutManager(this)
         val listDataAdapter = ListDataAdapter(list)
         recycleView.adapter = listDataAdapter
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedData(data: Data) {
-        val dataUser = Data (
+        val dataUser = Data(
             data.username,
             data.name,
             data.avatar,
@@ -62,14 +62,6 @@ class MainActivity : AppCompatActivity() {
 
         val intentDetail = Intent(this@MainActivity, DetailActivity::class.java)
         intentDetail.putExtra(DetailActivity.EXTRA_DATA, dataUser)
-//        intentDetail.putExtra(DetailActivity.EXTRA_NAME, data.name)
-//        intentDetail.putExtra(DetailActivity.EXTRA_USERNAME, data.username)
-//        intentDetail.putExtra(DetailActivity.EXTRA_COMPANY, data.company)
-//        intentDetail.putExtra(DetailActivity.EXTRA_LOCATION, data.location)
-//        intentDetail.putExtra(DetailActivity.EXTRA_REPOSITORY, data.repository.toString())
-//        intentDetail.putExtra(DetailActivity.EXTRA_FOLLOWERS, data.followers.toString())
-//        intentDetail.putExtra(DetailActivity.EXTRA_FOLLOWING, data.following.toString())
-//        intentDetail.putExtra(DetailActivity.EXTRA_AVATAR, data.avatar)
         startActivity(intentDetail)
     }
 }
